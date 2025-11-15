@@ -1,24 +1,51 @@
-// Arrivée : mardi 18 novembre 2025 à 21h40
-const arrival = new Date(2025, 10, 18, 21, 20, 0); 
-// ⚠️ Mois 10 = novembre (car janvier = 0)
+/* ============================================
+   BURGER MENU MOBILE
+   ============================================ */
+
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    mobileMenu.classList.toggle("show");
+});
+
+// Fermer le menu mobile quand on clique sur un lien
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        burger.classList.remove("open");
+        mobileMenu.classList.remove("show");
+    });
+});
+
+
+/* ============================================
+   COMPTE À REBOURS ARRIVÉE MADELEINE
+   ============================================ */
+
+// Date d'arrivée : mardi 18 novembre 2025, 21h40
+const arrivalDate = new Date("November 18, 2025 21:40:00").getTime();
 
 function updateCountdown() {
-    const now = new Date();
-    const diff = arrival - now;
+    const now = new Date().getTime();
+    const distance = arrivalDate - now;
 
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "Elle est là ❤️";
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Elle est arrivée ❤️";
         return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const mins = Math.floor((diff / (1000 * 60)) % 60);
-    const sec = Math.floor((diff / 1000) % 60);
+    // Calculs
+    const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    // Affichage
     document.getElementById("countdown").innerHTML =
-        `${days} jours • ${hours}h • ${mins}m • ${sec}s`;
+        `${days} jours • ${hours} h • ${minutes} min • ${seconds} sec`;
 }
 
+// Mise à jour toutes les secondes
 setInterval(updateCountdown, 1000);
-updateCountdown();
+updateCountdown(); // première exécution immédiate
