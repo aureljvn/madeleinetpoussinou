@@ -20,6 +20,24 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
 
 
 /* ============================================
+   DROPDOWN (CLIQUE POUR OUVRIR)
+   ============================================ */
+
+const dropbtn = document.querySelector(".dropbtn");
+const dropdownContent = document.querySelector(".dropdown-content");
+
+dropbtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownContent.style.display =
+        dropdownContent.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", () => {
+    dropdownContent.style.display = "none";
+});
+
+
+/* ============================================
    COMPTE À REBOURS ARRIVÉE MADELEINE
    ============================================ */
 
@@ -35,17 +53,14 @@ function updateCountdown() {
         return;
     }
 
-    // Calculs
     const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Affichage
     document.getElementById("countdown").innerHTML =
         `${days} jours • ${hours} h • ${minutes} min • ${seconds} sec`;
 }
 
-// Mise à jour toutes les secondes
 setInterval(updateCountdown, 1000);
-updateCountdown(); // première exécution immédiate
+updateCountdown();
