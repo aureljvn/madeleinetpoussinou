@@ -1,25 +1,66 @@
-// BURGER MENU
-function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("open");
-}
+/* ============================================
+   BURGER MENU MOBILE
+   ============================================ */
 
-// COMPTE À REBOURS
-const eventDate = new Date("2025-11-18T21:40:00").getTime();
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
 
-setInterval(() => {
-    const now = Date.now();
-    const diff = eventDate - now;
+burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    mobileMenu.classList.toggle("show");
+});
 
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "Elle est là ❤️";
+// Fermer le menu mobile quand on clique sur un lien
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        burger.classList.remove("open");
+        mobileMenu.classList.remove("show");
+    });
+});
+
+
+/* ============================================
+   DROPDOWN (CLIQUE POUR OUVRIR)
+   ============================================ */
+
+const dropbtn = document.querySelector(".dropbtn");
+const dropdownContent = document.querySelector(".dropdown-content");
+
+dropbtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownContent.style.display =
+        dropdownContent.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", () => {
+    dropdownContent.style.display = "none";
+});
+
+
+/* ============================================
+   COMPTE À REBOURS ARRIVÉE MADELEINE
+   ============================================ */
+
+// Date d'arrivée : mardi 18 novembre 2025, 21h40
+const arrivalDate = new Date("November 18, 2025 21:40:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = arrivalDate - now;
+
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Elle est arrivée ❤️";
         return;
     }
 
-    const j = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
+    const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML =
-        `${j} jours ${h}h ${m}m ${s}s`;
-}, 1000);
+        `${days} jours • ${hours} h • ${minutes} min • ${seconds} sec`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
