@@ -1,5 +1,6 @@
-// Date d'arrivée : mardi 21h40
-const arrival = new Date("2025-02-11T21:40:00");
+// Arrivée : mardi 18 novembre 2025 à 21h40
+const arrival = new Date(2025, 10, 18, 21, 40, 0); 
+// ⚠️ Mois 10 = novembre (car janvier = 0)
 
 function updateCountdown() {
     const now = new Date();
