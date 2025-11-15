@@ -16,8 +16,10 @@
 
         <nav class="nav-desktop">
             <a href="#accueil">Accueil</a>
+            <a href="#menu">Menu</a>
+
             <div class="dropdown">
-                <button class="dropbtn">Menu ▾</button>
+                <button class="dropbtn">Plus ▾</button>
                 <div class="dropdown-content">
                     <a href="#compte">Compte à rebours</a>
                     <a href="#semaine">Notre semaine</a>
@@ -28,7 +30,7 @@
             </div>
         </nav>
 
-        <!-- BURGER -->
+        <!-- BURGER MENU (MOBILE) -->
         <div class="burger" id="burger">
             <span></span><span></span><span></span>
         </div>
@@ -37,6 +39,7 @@
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#accueil">Accueil</a>
+        <a href="#menu">Menu</a>
         <a href="#compte">Compte à rebours</a>
         <a href="#semaine">Notre semaine</a>
         <a href="#activites">Activités</a>
@@ -50,27 +53,39 @@
         <p>J’ai créé ce site pour toi, pour notre semaine ensemble.</p>
     </section>
 
-    <!-- COUNTDOWN -->
+    <!-- MENU DE LA SEMAINE -->
+    <section id="menu" class="section">
+        <h2>🍽️ Menu de la semaine</h2>
+
+        <div class="cards">
+            <div class="card"><h3>Mardi soir</h3><p>Petit repas d’accueil ❤️</p></div>
+            <div class="card"><h3>Mercredi</h3><p>Brunch maison + dessert</p></div>
+            <div class="card"><h3>Jeudi</h3><p>Dîner à l'extérieur ou surprise</p></div>
+            <div class="card"><h3>Vendredi</h3><p>Pâtes / ramen + film</p></div>
+            <div class="card"><h3>Samedi</h3><p>Dîner romantique final ✨</p></div>
+        </div>
+    </section>
+
+    <!-- COMPTE À REBOURS -->
     <section id="compte" class="section">
         <h2>⏳ Compte à rebours avant ton arrivée</h2>
         <div id="countdown"></div>
     </section>
 
-    <!-- WEEK -->
+    <!-- SEMAINE -->
     <section id="semaine" class="section">
         <h2>🗓️ Notre semaine ensemble</h2>
 
         <div class="cards">
             <div class="card"><h3>Mardi</h3><p>🛬 Arrivée à 21h40</p></div>
-            <div class="card"><h3>Mercredi</h3><p>☕ Brunch + balade + film</p></div>
+            <div class="card"><h3>Mercredi</h3><p>☕ Brunch + balade</p></div>
             <div class="card"><h3>Jeudi</h3><p>🌆 Activité surprise</p></div>
             <div class="card"><h3>Vendredi</h3><p>🎮 Chill + soirée</p></div>
-            <div class="card"><h3>Samedi</h3><p>🍽️ Dîner romantique</p></div>
-            <div class="card"><h3>Dimanche</h3><p>💆 Détente ensemble</p></div>
+            <div class="card"><h3>Samedi</h3><p>💕 Dernier jour ensemble</p></div>
         </div>
     </section>
 
-    <!-- ACTIVITIES -->
+    <!-- ACTIVITÉS -->
     <section id="activites" class="section">
         <h2>🌞 Nos activités possibles</h2>
         <ul class="list">
@@ -78,7 +93,7 @@
             <li>🎬 Films / séries à voir ensemble</li>
             <li>🧁 Goûter + café</li>
             <li>🎮 Jeux ensemble</li>
-            <li>💆 Chill + moment détente</li>
+            <li>💆 Chill et détente</li>
         </ul>
     </section>
 
@@ -86,17 +101,18 @@
     <section id="playlist" class="section">
         <h2>🎶 Notre playlist</h2>
         <iframe src="https://widget.deezer.com/widget/auto/playlist/908622995"
-            width="100%" height="300" frameborder="0"></iframe>
+                width="100%" height="300" frameborder="0"></iframe>
     </section>
 
     <!-- SOUVENIRS -->
     <section id="souvenirs" class="section">
         <h2>📸 Nos souvenirs</h2>
-        <p>On pourra en ajouter après ❤️</p>
+        <p>On pourra en rajouter après ❤️</p>
+
         <div class="gallery">
-            <img src="IMG_8574.png" />
-            <img src="814e9d62-8eee-417b-a3e8-832081dcf75a.jpeg" />
-            <img src="66880F4F-D96A-42EC-8052-2F8D9BB903AF.jpeg" />
+            <img src="images/66880F4F-D96A-42EC-8052-2F8D9BB903AF.jpeg">
+            <img src="images/814e9d62-8eee-417b-a3e8-832081dcf75a.jpeg">
+            <img src="images/IMG_8574.png">
         </div>
     </section>
 
