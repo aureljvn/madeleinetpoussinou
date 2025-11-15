@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #fff7f0;
+    color: #333;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ffb88c, #ff7e5f);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    color: #333;
+    padding: 10px 0;
+    border-radius: 8px;
+    top: 25px;
+    width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0;
+    text-shadow: 0 0 10px #0005;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px #0002;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.list li {
+    padding: 10px;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #ff7e5f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
