@@ -7,16 +7,114 @@ body {
 
 /* HEADER */
 
-header {
+/* === NAVBAR ULTRA STYLE === */
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #ffb88c, #ff7e5f);
+
+    padding: 15px 35px;
+
+    background: linear-gradient(90deg, #ff9a7b, #ff6b6b);
     color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+
+    box-shadow: 0 4px 20px #0003;
+}
+
+.nav-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #0004;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.75;
+}
+
+/* === DROPDOWN === */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.dropbtn:hover {
+    background: #ffffff33;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+
+    background: white;
+    min-width: 180px;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 4px 20px #0003;
+
+    animation: fadeIn 0.2s ease-in-out;
+
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+    background: #ffe3d4;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .logo {
