@@ -210,8 +210,14 @@ body {
 
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to bottom, #ffe3d4 0%, #fff9f6 100%);
+    padding: 120px 20px;
+
+    /* Dégradé léger → laisse voir la photo derrière */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 227, 212, 0.55) 0%,
+        rgba(255, 249, 246, 0.25) 100%
+    );
 }
 
 .hero h1 {
@@ -222,8 +228,9 @@ body {
 
 .hero p {
     font-size: 20px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
+
 
 
 /* ===========================================================
