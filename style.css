@@ -230,15 +230,39 @@ body {
    SECTIONS
    =========================================================== */
 
+/* --- SECTIONS LISIBLES SUR FOND SOMBRE --- */
 .section {
-    padding: 70px 40px;
+    padding: 60px 25px;
     text-align: center;
+
+    background: rgba(255, 255, 255, 0.88); /* transparent + lisible */
+    backdrop-filter: blur(12px); /* effet verre dépoli */
+    border-radius: 18px;
+
+    width: 88%;
+    margin: 40px auto;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18); /* ombre douce pour séparer du fond */
 }
 
 .section h2 {
-    font-size: 32px;
+    font-size: 28px;
     color: #ff6b6b;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
+}
+
+/* --- VERSION MOBILE (encore plus lisible) --- */
+@media (max-width: 850px) {
+    .section {
+        background: rgba(255, 255, 255, 0.94);
+        padding: 40px 20px;
+        width: 92%;
+        border-radius: 16px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
 }
 
 
