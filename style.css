@@ -6,16 +6,26 @@
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* --- FOND GÉNÉRAL --- */
 body {
     margin: 0;
     font-family: "Helvetica", sans-serif;
     color: #222;
 
-    /* Mets ton image ici */
-    background: url("images/IMG_9137.jpg.jpeg") no-repeat center center fixed;
+    background-image: url("images/fond.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: cover;
-    background-position: center 20%;
+}
 
+/* --- VERSION MOBILE DU FOND --- */
+@media (max-width: 850px) {
+    body {
+        background-size: contain; /* l’image n’est plus zoomée */
+        background-position: top center; /* centrée sur ton visage */
+        background-attachment: scroll; /* évite l’effet bizarre de zoom */
+        background-color: #f7d7e6; /* couleur douce derrière si l'image ne couvre pas 100% */
+    }
 }
 
 
