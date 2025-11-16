@@ -231,18 +231,19 @@ body {
    =========================================================== */
 
 /* --- SECTIONS LISIBLES SUR FOND SOMBRE --- */
+/* --- SECTIONS SANS BLUR MAIS LISIBLES --- */
 .section {
-    padding: 60px 25px;
+    padding: 55px 25px;
     text-align: center;
 
-    background: rgba(255, 255, 255, 0.88); /* transparent + lisible */
-    backdrop-filter: blur(12px); /* effet verre dépoli */
+    background: rgba(255, 255, 255, 0.65); /* translucide, laisse voir l’image */
     border-radius: 18px;
 
+    border: 1px solid rgba(255, 255, 255, 0.55); /* bord blanc léger */
     width: 88%;
     margin: 40px auto;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18); /* ombre douce pour séparer du fond */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20); /* ombre douce */
 }
 
 .section h2 {
@@ -251,19 +252,21 @@ body {
     margin-bottom: 18px;
 }
 
-/* --- VERSION MOBILE (encore plus lisible) --- */
+/* --- VERSION MOBILE --- */
 @media (max-width: 850px) {
     .section {
-        background: rgba(255, 255, 255, 0.94);
-        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.78); /* un peu plus opaque pour la lisibilité mobile */
+        padding: 45px 20px;
         width: 92%;
         border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
     }
 
     .section h2 {
         font-size: 26px;
     }
 }
+
 
 
 /* Countdown */
