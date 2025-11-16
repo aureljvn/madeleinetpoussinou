@@ -64,3 +64,33 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+/* === COMPTE À REBOURS CHECK-IN === */
+
+// Check-in : lundi prochain à 19h45
+// ---->>>  ON CALCULE LA DATE PRECISÉE  <<<-----
+// Mardi 18h35 = Samedi 15 novembre 2025 aujourd'hui. 
+// Le check-in est lundi 17 novembre 2025 à 19:45.
+
+const checkinDate = new Date("November 17, 2025 19:45:00").getTime();
+
+function updateCheckinCountdown() {
+    const now = new Date().getTime();
+    const diff = checkinDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("checkin-countdown").innerHTML = "Disponible ! 🎉";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("checkin-countdown").innerHTML =
+        `${days}j ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateCheckinCountdown, 1000);
+updateCheckinCountdown();
