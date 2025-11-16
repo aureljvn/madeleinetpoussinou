@@ -232,6 +232,7 @@ body {
 
 /* --- SECTIONS LISIBLES SUR FOND SOMBRE --- */
 /* --- SECTIONS SANS BLUR MAIS LISIBLES --- */
+/* --- SECTIONS SANS BLUR MAIS LISIBLES --- */
 .section {
     padding: 55px 25px;
     text-align: center;
@@ -265,6 +266,7 @@ body {
     .section h2 {
         font-size: 26px;
     }
+}
 }
 
 
